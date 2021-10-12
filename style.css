@@ -81,7 +81,66 @@ button:hover {
   stroke: grey;
   stroke-width: 5px;
 }
+/**** Dialog boxes ****/
+.hide {
+  visibility: hidden;
+}
+.fade {
+  animation: fadeIn 1s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.leave {
+  animation: leaveScreen 0.5s forwards;
+}
+@keyframes leaveScreen {
+  to {
+    transform: translateX(200vw);
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.dialog {
+  border: 2px solid black;
+  /*   padding: 4rem; */
+  background-color: lightblue;
+  position: relative;
+  width: 400px;
+  text-align: center;
+}
+.dialog_content {
+  align-self: center;
+  padding: 5rem;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+}
+.x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+#share_confirmation .dialog_content p {
+  cursor: pointer;
+}
 @media (min-width: 600px) {
   section {
     display: grid;

@@ -101,6 +101,16 @@ function removeStroke(e) {
 }
 
 function saveImg() {
+  // modal box animations
+  document
+    .querySelector("#save_confirmation")
+    .removeEventListener("animationend", removeAni);
+  document.querySelector("#save_confirmation").classList.remove("hide");
+  document.querySelector("#save_confirmation").classList.add("fade");
+  document
+    .querySelector("#save_confirmation .x")
+    .addEventListener("click", closeDialog);
+
   // saves object settings in local storage
   localStorage.setItem("userCreation", JSON.stringify(customImg));
 }
@@ -126,6 +136,15 @@ function resetImg() {
 }
 
 function shareImg() {
+  document
+    .querySelector("#share_confirmation")
+    .removeEventListener("animationend", removeAni);
+  document.querySelector("#share_confirmation").classList.remove("hide");
+  document.querySelector("#share_confirmation").classList.add("fade");
+  document
+    .querySelector("#share_confirmation .x")
+    .addEventListener("click", closeDialog);
+
   // encodes object settings and creates an url which can be shared
   const toSend = {};
   for (var key in customImg) {
@@ -135,8 +154,52 @@ function shareImg() {
     "http://127.0.0.1:5500/index.html?jacket_settings=" +
       encodeURI(JSON.stringify(toSend))
   );
+  /*  document.querySelector("#share_confirmation p span").textContent =
+    "http://127.0.0.1:5500/index.html?jacket_settings=" +
+    encodeURI(JSON.stringify(toSend)); */
+  document
+    .querySelector("#share_confirmation p")
+    .addEventListener("click", copyLink);
+
+  function copyLink() {
+    let link =
+      "http://127.0.0.1:5500/index.html?jacket_settings=" +
+      encodeURI(JSON.stringify(toSend));
+    navigator.clipboard.writeText(link);
+    document.querySelector("#share_confirmation p").textContent =
+      "Link has been copied!";
+  }
 }
 
+function closeDialog() {
+  document
+    .querySelector("#save_confirmation .x")
+    .removeEventListener("click", closeDialog);
+  document
+    .querySelector("#share_confirmation .x")
+    .removeEventListener("click", closeDialog);
+
+  document.querySelector("#save_confirmation").classList.remove("fade");
+  document.querySelector("#share_confirmation").classList.remove("fade");
+
+  document.querySelector("#save_confirmation").classList.add("leave");
+  document.querySelector("#share_confirmation").classList.add("leave");
+  document
+    .querySelector("#save_confirmation")
+    .addEventListener("animationend", removeAni);
+
+  document
+    .querySelector("#share_confirmation")
+    .addEventListener("animationend", removeAni);
+  document.querySelector("#share_confirmation p").textContent =
+    "Click to copy the link";
+}
+function removeAni() {
+  document.querySelector("#save_confirmation").classList.add("hide");
+  document.querySelector("#share_confirmation").classList.add("hide");
+  document.querySelector("#save_confirmation").classList.remove("leave");
+  document.querySelector("#share_confirmation").classList.remove("leave");
+}
 function applySavedImage(img) {
   // aplies image settings from local storage or the link
   customImg = img;
