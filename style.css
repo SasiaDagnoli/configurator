@@ -19,6 +19,7 @@ button {
   font-family: "Bebas Neue", cursive;
   font-size: 1.5rem;
   cursor: pointer;
+  margin-top: 2rem;
 }
 .color {
   width: 3rem;
@@ -29,7 +30,8 @@ button {
   flex-direction: row;
   gap: 8px;
 }
-#shadow {
+#shadow,
+.preview img {
   pointer-events: none;
 }
 .cls-1,
@@ -77,13 +79,30 @@ button {
   stroke: grey;
   stroke-width: 5px;
 }
+.hide {
+  display: none;
+}
+.preview img {
+  position: absolute;
+}
+
+.preview {
+  position: relative;
+}
 @media (min-width: 600px) {
   section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
   }
-  img {
-    max-width: 50vw;
+  svg,
+  .preview img {
+    width: 100%;
+  }
+  .buttom img,
+  #selected img {
+    width: 3rem;
+    margin: 0.5rem;
+    margin-top: 0rem;
   }
 }
