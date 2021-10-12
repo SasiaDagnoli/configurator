@@ -14,11 +14,15 @@ h2 {
 button {
   width: 8rem;
   padding: 0.5rem;
+  margin-right: 1rem;
   background-color: transparent;
   border: 2px solid black;
   font-family: "Bebas Neue", cursive;
   font-size: 1.5rem;
   cursor: pointer;
+}
+button:hover {
+  transform: translateY(-2px);
 }
 .color {
   width: 3rem;
@@ -77,6 +81,7 @@ button {
   stroke: grey;
   stroke-width: 5px;
 }
+
 @media (min-width: 600px) {
   section {
     display: grid;
