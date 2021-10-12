@@ -43,6 +43,7 @@ function clickBadge(event) {
     console.log(`${badge} is turned off!`);
     document.querySelector(`[data-badge=${badge}]`).classList.add("hide");
     removeElement(badge);
+    // animateBack(badge);
   }
 }
 function createBadgeElement(badge) {
@@ -56,6 +57,36 @@ function createBadgeElement(badge) {
 
   selected.append(img);
 
+  //FLIP animation
+  const firstFrame = document.querySelector(`.${badge}-badge`).getBoundingClientRect();
+  console.log("firstframe", firstFrame);
+
+  const lastFrame = img.getBoundingClientRect();
+  console.log("lastframe", lastFrame);
+
+  //position calculation
+  const deltaX = firstFrame.left - lastFrame.left;
+  const deltaY = firstFrame.top - lastFrame.top;
+
+  //scale calculation
+  const deltaWidth = firstFrame.width / lastFrame.width;
+  const deltaHeight = firstFrame.height / lastFrame.height;
+
+  img.animate(
+    [
+      {
+        transformOrigin: "top left",
+        transform: `translate(${deltaX}px, ${deltaY}px) 
+        scale(${deltaWidth}, ${deltaHeight})`,
+      },
+      { transformOrigin: "top left", transform: "none" },
+    ],
+    {
+      duration: 200,
+      easing: "ease-in-out",
+    }
+  );
+
   return selected;
 }
 function removeElement(badge) {
@@ -63,6 +94,39 @@ function removeElement(badge) {
   console.log(element);
   element.remove();
 }
+// function animateBack(badge) {
+//   const element = document.getElementById(`${badge}`);
+
+//   //FLIP animation
+//   const firstFrame = document.querySelector(`.${badge}-badge`).getBoundingClientRect();
+//   console.log("firstframe", firstFrame);
+
+//   const lastFrame = element.getBoundingClientRect();
+//   console.log("lastframe", lastFrame);
+
+//   //position calculation
+//   const deltaX = lastFrame.left + firstFrame.left;
+//   const deltaY = lastFrame.top + firstFrame.top;
+
+//   //scale calculation
+//   const deltaWidth = lastFrame.width * firstFrame.width;
+//   const deltaHeight = lastFrame.height * firstFrame.height;
+
+//   element.animate(
+//     [
+//       {
+//         transformOrigin: "top left",
+//         transform: `translate(${deltaX}px, ${deltaY}px)
+//         scale(${deltaWidth}, ${deltaHeight})`,
+//       },
+//       { transformOrigin: "top left", transform: "none" },
+//     ],
+//     {
+//       duration: 200,
+//       easing: "ease-in",
+//     }
+//   );
+// }
 
 function init() {
   let currentColor = "";
