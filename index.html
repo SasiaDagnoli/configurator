@@ -7,19 +7,25 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="cursor"></div>
     <h1>Design your own jacket</h1>
     <section>
-      <div class="image">
-        <!-- <img src="MicrosoftTeams-image.png" alt="" /> -->
+      <div class="preview">
+        <img src="badges/alien_badge.png" alt="" data-badge="alien" class="hide" />
+        <img src="badges/egg_badge.png" alt="" data-badge="egg" class="hide" />
+        <img src="badges/rose_badge.png" alt="" data-badge="rose" class="hide" />
+        <img src="badges/starwars_badge.png" alt="" data-badge="starwars" class="hide" />
+        <img src="badges/yoda_badge.png" alt="" data-badge="yoda" class="hide" />
+        <div class="image">
+          <!-- <img src="MicrosoftTeams-image.png" alt="" /> -->
+        </div>
       </div>
+
       <div class="settings">
         <h2>Choose a color</h2>
         <div class="top">
@@ -34,17 +40,18 @@
         </div>
         <div class="buttom">
           <h2>Add a badge</h2>
-          <div class="bagde"></div>
-          <div class="bagde"></div>
-          <div class="bagde"></div>
-          <div class="bagde"></div>
-          <div class="bagde"></div>
-
-          <button class="save">Save</button>
+          <img src="badges/small_alien.png" alt="" class="badge alien-badge" data-badge="alien" />
+          <img src="badges/small_egg.png" alt="" class="badge egg-badge" data-badge="egg" />
+          <img src="badges/small_rose.png" alt="" class="badge rose-badge" data-badge="rose" />
+          <img src="badges/small_starwars.png" alt="" class="badge starwars-badge" data-badge="starwars" />
+          <img src="badges/small_yoda.png" alt="" class="badge yoda-badge" data-badge="yoda" />
         </div>
+
+        <h2>Chosen bagdes</h2>
+        <div id="selected"></div>
+
+        <button class="save">Save</button>
       </div>
-      <h2>Chosen bagdes</h2>
-      <div class="chosen"></div>
     </section>
   </body>
   <script src="script.js"></script>
