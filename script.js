@@ -161,7 +161,7 @@ function init() {
     const jacketParams = urlParams.get("jacket_settings");
     console.log(jacketParams);
     const jacketObj = JSON.parse(decodeURI(jacketParams));
-    img = {};
+    let img = {};
     for (var key in jacketObj) {
       img[key] = decodeURIComponent(jacketObj[key]);
     }
