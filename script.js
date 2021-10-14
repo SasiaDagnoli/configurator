@@ -7,6 +7,11 @@ async function start() {
   init();
 }
 
+let cursor = document.querySelector(".cursor");
+document.body.addEventListener("mousemove", function (e) {
+  (cursor.style.left = e.clientX + "px"), (cursor.style.top = e.clientY + "px");
+});
+
 function init() {
   let currentColor = "";
 
@@ -38,6 +43,7 @@ function init() {
     element.addEventListener("click", (event) => {
       currentColor = event.target.style.backgroundColor;
       console.log(currentColor);
+      cursor.style.backgroundColor = currentColor;
     });
   });
 
