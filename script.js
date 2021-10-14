@@ -220,6 +220,7 @@ function selectPart() {
 
 function setColor(element, colorString) {
   element.style.fill = colorString;
+  cursor.style.backgroundColor = "transparent";
 }
 function createStroke(e) {
   e.target.parentElement.classList.add("stroke");
