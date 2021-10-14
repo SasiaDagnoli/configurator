@@ -118,7 +118,7 @@ button:hover {
 .dialog {
   border: 2px solid black;
   /*   padding: 4rem; */
-  background-color: lightblue;
+  background-color: white;
   position: relative;
   width: 400px;
   text-align: center;
