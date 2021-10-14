@@ -7,7 +7,10 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -16,11 +19,31 @@
     <h1>Design your own jacket</h1>
     <section>
       <div class="preview">
-        <img src="badges/alien_badge.png" alt="" data-badge="alien" class="hide" />
+        <img
+          src="badges/alien_badge.png"
+          alt=""
+          data-badge="alien"
+          class="hide"
+        />
         <img src="badges/egg_badge.png" alt="" data-badge="egg" class="hide" />
-        <img src="badges/rose_badge.png" alt="" data-badge="rose" class="hide" />
-        <img src="badges/starwars_badge.png" alt="" data-badge="starwars" class="hide" />
-        <img src="badges/yoda_badge.png" alt="" data-badge="yoda" class="hide" />
+        <img
+          src="badges/rose_badge.png"
+          alt=""
+          data-badge="rose"
+          class="hide"
+        />
+        <img
+          src="badges/starwars_badge.png"
+          alt=""
+          data-badge="starwars"
+          class="hide"
+        />
+        <img
+          src="badges/yoda_badge.png"
+          alt=""
+          data-badge="yoda"
+          class="hide"
+        />
         <div class="image">
           <!-- <img src="MicrosoftTeams-image.png" alt="" /> -->
         </div>
@@ -40,19 +63,63 @@
         </div>
         <div class="buttom">
           <h2>Add a badge</h2>
-          <img src="badges/small_alien.png" alt="" class="badge alien-badge" data-badge="alien" />
-          <img src="badges/small_egg.png" alt="" class="badge egg-badge" data-badge="egg" />
-          <img src="badges/small_rose.png" alt="" class="badge rose-badge" data-badge="rose" />
-          <img src="badges/small_starwars.png" alt="" class="badge starwars-badge" data-badge="starwars" />
-          <img src="badges/small_yoda.png" alt="" class="badge yoda-badge" data-badge="yoda" />
+          <img
+            src="badges/small_alien.png"
+            alt=""
+            class="badge alien-badge"
+            data-badge="alien"
+          />
+          <img
+            src="badges/small_egg.png"
+            alt=""
+            class="badge egg-badge"
+            data-badge="egg"
+          />
+          <img
+            src="badges/small_rose.png"
+            alt=""
+            class="badge rose-badge"
+            data-badge="rose"
+          />
+          <img
+            src="badges/small_starwars.png"
+            alt=""
+            class="badge starwars-badge"
+            data-badge="starwars"
+          />
+          <img
+            src="badges/small_yoda.png"
+            alt=""
+            class="badge yoda-badge"
+            data-badge="yoda"
+          />
         </div>
 
         <h2>Chosen bagdes</h2>
         <div id="selected"></div>
 
         <button class="save">Save</button>
+        <button class="reset">Reset</button>
+        <button class="share">Share</button>
       </div>
     </section>
+    <div id="save_confirmation" class="modal hidden">
+      <div class="dialog">
+        <div class="x">X</div>
+        <div class="dialog_content">
+          <p>Your jacket has been saved</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="share_confirmation" class="modal hidden">
+      <div class="dialog">
+        <div class="x">X</div>
+        <div class="dialog_content">
+          <p>Click to copy the link</p>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
